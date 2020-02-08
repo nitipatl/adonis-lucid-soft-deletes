@@ -55,7 +55,7 @@ describe('softDeletes', () => {
     ioc.bind('Adonis/Src/Model', always(lucid.Model))
     ioc.alias('Adonis/Src/Model', 'Model')
 
-    await helpers.createTables(lucid.db)
+    await helpers.createTables(lucid.db, 'deleted_at')
 
     const provider = new ServiceProvider(ioc)
 

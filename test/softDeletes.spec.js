@@ -49,7 +49,8 @@ const defineModel = (name, deletedAtColumn, lucid, bootCallback = noop, extendOb
 
 iocResolver.setFold(fold)
 
-Object.keys(['deleted_at']).forEach(deletedAtColumn => {
+const arr = ['deleted_at']
+arr.forEach(deletedAtColumn => {
   describe(`softDeletes ${deletedAtColumn}`, () => {
     let lucid
     let User
